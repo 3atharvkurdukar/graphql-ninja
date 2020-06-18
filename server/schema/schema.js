@@ -92,6 +92,20 @@ const RootQuery = new GraphQLObjectType({
         return _.find(authors, { id: args.id });
       },
     },
+    books: {
+      type: new GraphQLList(BookType),
+      resolve(parent, args) {
+        // Code to get data from DB / other source
+        return books;
+      },
+    },
+    authors: {
+      type: new GraphQLList(AuthorType),
+      resolve(parent, args) {
+        // Code to get data from DB / other source
+        return authors;
+      },
+    },
   },
 });
 
